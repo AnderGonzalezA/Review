@@ -99,7 +99,7 @@ public class ScannerStringarrayInteger {
 				        	if (chk>0) {
 				        		int lngth3 = pstv.length();
 				        		int index=lngth3--;
-				        		for (int i=index;i>=0;i--) {
+				        		for (int i=index;i>=0;i-1) {
 				        			System.out.print(pstv.charAt(i));
 				        		}
 				        		cntr2++;
