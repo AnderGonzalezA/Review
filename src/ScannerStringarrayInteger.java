@@ -56,7 +56,8 @@ public class ScannerStringarrayInteger {
 								        	char[] dgt3 = pstv2.toCharArray();
 								        	int cntr6 = 0;
 								        	for (int i=0;i<lngth3;i++) {
-								        		if (dgt3[i]==chk2) {
+								        		int dgt4 = dgt3[i] - '0';
+								        		if (dgt4==chk2) {
 								        			cntr6++;
 								        		}
 								        	}
@@ -98,10 +99,10 @@ public class ScannerStringarrayInteger {
 				        	int chk = Integer.parseInt(pstv);
 				        	if (chk>0) {
 				        		int lngth3 = pstv.length();
-				        		int index=lngth3--;
-				        		for (int i=index;i>=0;i--) {
-				        			System.out.print(pstv.charAt(i));
+				        		for (int index=lngth3-1;index>=0;index--) {
+				        			System.out.print(pstv.charAt(index));
 				        		}
+				        		System.out.print("\n");
 				        		cntr2++;
 				        	}
 				        	else {
@@ -114,7 +115,43 @@ public class ScannerStringarrayInteger {
 		        	}
 		            break;
 		        case 4:
-		            
+		        	int cntr4=0;
+		        	System.out.println("Please, enter a binary number");
+		        	while (cntr4==0) {
+		        		if (sc.hasNextInt()) {
+		        			String bnry = sc.next();
+		        			char[] dgt = bnry.toCharArray();
+		        			int cntr6=0;
+		        			// Check that all the digits are 1 or 0
+		        			int ind = 0;
+		        			boolean encountered = false;
+		        			while ((ind < dgt.length) && (!encountered)) {
+		        				if (dgt[ind]!='0' && dgt[ind]!='1') {
+		        					encountered = true;
+		        				}
+		        			ind++;
+		        		    }
+		        		    if (!encountered) {
+		        		    	// Make the conversion from binary to decimal
+		        				double dcml=0;
+		        				int index2=0;
+		        				int lngth=bnry.length();
+		        				for (int index=lngth-1;index>=0;index--) {
+		        					int dgt2 = bnry.charAt(index)-'0';
+		        					dcml=dcml+ dgt2*Math.pow(2,index2);
+				        			index2++;
+				        		}
+		        				System.out.println("The binary number given's decimal value is: " + dcml);
+		        				cntr4++;
+		        			}
+		        			else {
+		        				System.out.println("That is not a binary number, try it again");
+		        			}
+		        		}
+		        		else {
+		        			System.out.println("That is not a binary number, try it again");
+		        		}
+		        	}
 		            break;
 		        case 5:
 		            
