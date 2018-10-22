@@ -14,28 +14,36 @@ public class ScannerStringarrayInteger {
 					+ "5 Given a sentence and a letter it gives the number of words of the sentence that begin with that letter.\n"
 					+ "6 Given a sentence and a letter it gives the number of words of the sentence that end with that letter.\n"
 					+ "7 Given a word it tells the user whether the word is a palindrome or it is not.\n");
+			// Check that the user enters a number
 			if (sc.hasNextInt()) {
-				int ptn = sc.nextInt();
-			    switch ( ptn ) {
+				int option = sc.nextInt();
+			    switch ( option ) {
 			        case 1:
-			        	int flag3=0;
 			        	System.out.println("Please, enter a positive number");
-			        	while (flag3==0) {
+	        			// Open a loop
+			        	int flag2=0;
+			        	while (flag2==0) {
+			        		// Check that the user enters a number
 			        		if (sc.hasNextInt()) {
-			        			String pstv = sc.next();
-					        	int chk = Integer.parseInt(pstv);
-					        	if (chk>0) {
-						        	int lngth = pstv.length();
-						        	char[] dgt = pstv.toCharArray();
-						        	int cntr = 0;
-						        	for(int i=0;i<lngth;i++) {
-						        		int dgt2 = Character.getNumericValue(dgt[i]);
-						        		if (dgt2 % 2 == 0) {
-											cntr++;
+			        			// Create a string object with the number's value
+			        			String usernumber = sc.next();
+			        			// Pass the value to an int variable
+					        	int check = Integer.parseInt(usernumber);
+					        	// Check that the number is positive
+					        	if (check>0) {
+					        		// Create an array with the number's digits
+						        	char[] digits = usernumber.toCharArray();
+						        	// Count the even digits of the number
+						        	int counter = 0;
+						        	for(int i=0;i<usernumber.length();i++) {
+						        		int digit = Character.getNumericValue(digits[i]);
+						        		if (digit % 2 == 0) {
+											counter++;
 										}
 						        	}
-					        		System.out.println("This number has " + cntr + " even digits.");
-						        	flag3++;
+					        		System.out.println("This number has " + counter + " even digits.");
+					        		// Get out of the loop
+						        	flag2++;
 					        	}
 					        	else {
 					        		System.out.println("That is not a positive number, try it again");
@@ -43,52 +51,63 @@ public class ScannerStringarrayInteger {
 			        		}
 			        		else {
 			        			System.out.println("That is not a positive number, try it again");
+			        			// Jump the token '/n'
+								String tokenjump= sc.next();
 			        		}
 			        	}
 			            break;
 			        case 2:
-			        	int cntr5=0;
 			        	System.out.println("Please, enter a positive number");
-			        	while (cntr5==0) {
+	        			// Open a loop
+			        	int flag3=0;
+			        	while (flag3==0) {
+			        		// Check that the user enters a number
 			        		if (sc.hasNextInt()) {
-			        			String pstv2 = sc.next();
-					        	int chk = Integer.parseInt(pstv2);
+			        			// Create a string object with the number's value
+			        			String usernumber = sc.next();
+			        			// Pass the value to an int variable
+					        	int chk = Integer.parseInt(usernumber);
+					        	// Check that the number is positive
 					        	if (chk>0) {
 					        		System.out.println("Please, enter a digit");
+					        		// Check that the user enters a number
 						        	if (sc.hasNextInt()) {
-										String saltodelinea= sc.nextLine();
-						        		String dgt2 = sc.next();
-						        		int chk2 = Integer.parseInt(dgt2);
-							        	if (chk2>0) {
-								        	int lngth2 = dgt2.length();
-								        	if (lngth2==1) {
-								        		int lngth3 = pstv2.length();
-									        	char[] dgt3 = pstv2.toCharArray();
-									        	int cntr6 = 0;
-									        	for (int i=0;i<lngth3;i++) {
-									        		int dgt4 = dgt3[i] - '0';
-									        		if (dgt4==chk2) {
-									        			cntr6++;
+						        		// Jump the line
+										String linejump= sc.nextLine();
+										// Create a string object with the number's value
+						        		String digit = sc.next();
+						        		// Pass the value to an int variable
+						        		int check = Integer.parseInt(digit);
+						        		// Check that the number is positive
+							        	if (check>0) {
+							        		// Check that the number is a digit
+								        	if (digit.length()==1) {
+								        		// Create an array with the previous number's digits
+									        	char[] digits = usernumber.toCharArray();
+									        	// Count how many times the digit appears in the number
+									        	int counter = 0;
+									        	for (int i=0;i<usernumber.length();i++) {
+									        		int digit2 = Character.getNumericValue(digits[i]);
+									        		if (digit2==check) {
+									        			counter++;
 									        		}
 									        	}
-									        	if (cntr6==0) {
-									        		System.out.println("This digit doesn't appear in that number.");
-									        	}
-									        	else {
-									        		System.out.println("This digit appears "+ cntr6 + " times in that number.");
-									        	}
-								        		cntr5++;
+									        	System.out.println("This digit appears "+ counter + " times in that number.");
+									        	// Get out of the loop
+								        		flag3++;
 								        	}
 								        	else {
-								        		System.out.println("That is not a digit, try it again");
+								        		System.out.println("That is not a digit, enter the number again");
 								        	}
 							        	}
 							        	else {
-							        		System.out.println("That is not a digit, try it again");
+							        		System.out.println("That is not a digit, enter the number again");
 							        	}
 						        	}
 						        	else {
-						        		System.out.println("That is not a digit, try it again");
+						        		System.out.println("That is not a digit, enter the number again");
+						        		// Jump the token '/n'
+										String tokenjump= sc.next();
 						        	}
 					        	}
 					        	else {
@@ -97,23 +116,31 @@ public class ScannerStringarrayInteger {
 			        		}
 			        		else {
 			        			System.out.println("That is not a positive number, try it again");
+			        			// Jump the token '/n'
+								String tokenjump= sc.next();
 			        		}
 			        	}
 			            break;
 			        case 3:
-			        	int cntr2=0;
 			        	System.out.println("Please, enter a positive number");
-			        	while (cntr2==0) {
+	        			// Open a loop
+			        	int flag4=0;
+			        	while (flag4==0) {
+			        		// Check that the user enters a number
 			        		if (sc.hasNextInt()) {
-			        			String pstv = sc.next();
-					        	int chk = Integer.parseInt(pstv);
+			        			// Create a string object with the number's value
+			        			String usernumber = sc.next();
+			        			// Pass the value to an int variable
+					        	int chk = Integer.parseInt(usernumber);
+					        	// Check that the number is positive
 					        	if (chk>0) {
-					        		int lngth3 = pstv.length();
-					        		for (int index=lngth3-1;index>=0;index--) {
-					        			System.out.print(pstv.charAt(index));
+					        		// Print the inverted number
+					        		for (int index=usernumber.length()-1;index>=0;index--) {
+					        			System.out.print(usernumber.charAt(index));
 					        		}
 					        		System.out.print("\n");
-					        		cntr2++;
+					        		// Get out of the loop
+					        		flag4++;
 					        	}
 					        	else {
 					        		System.out.println("That is not a positive number, try it again");
@@ -121,37 +148,44 @@ public class ScannerStringarrayInteger {
 			        		}
 			        		else {
 			        			System.out.println("That is not a positive number, try it again");
+			        			// Jump the token '/n'
+								String tokenjump= sc.next();
+			        			
 			        		}
 			        	}
 			            break;
 			        case 4:
-			        	int cntr4=0;
 			        	System.out.println("Please, enter a binary number");
-			        	while (cntr4==0) {
+	        			// Open a loop
+			        	int flag5=0;
+			        	while (flag5==0) {
+			        		// Check that the user enters a number
 			        		if (sc.hasNextInt()) {
-			        			String bnry = sc.next();
-			        			char[] dgt = bnry.toCharArray();
+			        			// Create a string object with the number's value
+			        			String usernumber = sc.next();
+			        			// Create an array with the number's digits
+			        			char[] digits = usernumber.toCharArray();
 			        			// Check that all the digits are 1 or 0
-			        			int ind = 0;
+			        			int index = 0;
 			        			boolean encountered = false;
-			        			while ((ind < dgt.length) && (!encountered)) {
-			        				if (dgt[ind]!='0' && dgt[ind]!='1') {
+			        			while ((index < digits.length) && (!encountered)) {
+			        				if (digits[index]!='0' && digits[index]!='1') {
 			        					encountered = true;
 			        				}
-			        			ind++;
+			        			index++;
 			        		    }
 			        		    if (!encountered) {
 			        		    	// Make the conversion from binary to decimal
-			        				double dcml=0;
+			        				double decimal=0;
 			        				int index2=0;
-			        				int lngth=bnry.length();
-			        				for (int index=lngth-1;index>=0;index--) {
-			        					int dgt2 = bnry.charAt(index)-'0';
-			        					dcml=dcml+ dgt2*Math.pow(2,index2);
+			        				for (int index3=usernumber.length()-1;index3>=0;index3--) {
+			        					int digit = Character.getNumericValue(usernumber.charAt(index3));
+			        					decimal=decimal+ digit*Math.pow(2,index2);
 					        			index2++;
 					        		}
-			        				System.out.println("The binary number given's decimal value is: " + dcml);
-			        				cntr4++;
+			        				System.out.println("The binary number given's decimal value is: " + decimal);
+			        				// Get out of the loop
+			        				flag5++;
 			        			}
 			        			else {
 			        				System.out.println("That is not a binary number, try it again");
@@ -159,73 +193,92 @@ public class ScannerStringarrayInteger {
 			        		}
 			        		else {
 			        			System.out.println("That is not a binary number, try it again");
+			        			// Jump the token '/n'
+								String tokenjump= sc.next();
 			        		}
 			        	}
 			            break;
 			        case 5:
-			        	int cntr6=0;
-			        	System.out.println("Please, enter a letter and a sentence.");
-	        			String lnjmp = sc.nextLine();
-	        			String sntnc = sc.nextLine();
-			        	while (cntr6==0) {
-			        			String lttr = sc.next();
-								int lngth = lttr.length();
-								if(lngth<2) {
-									char lttr2[]= lttr.toCharArray();
-									String[] words =sntnc.split(" ");
-									int cntr7=0;
-									for (String word: words) {
-									    char chr[]= word.toCharArray();
-									    if (lttr2[0]==chr[0]) {
-									        cntr7++;
-									    }
-									}
-									System.out.println(cntr7 + " words of the sentence given start with the letter " + lttr + ".");
-									cntr6++;	
+			        	System.out.println("Please, enter a sentence and a letter.");
+			        	// Jump the token '/n' and go to the next line
+			        	String linejump = sc.nextLine();
+			        	// Create a string object with the user's sentence
+	        			String sentence = sc.nextLine();
+	        			// Open a loop
+			        	int flag6=0;
+			        	while (flag6==0) {
+			        		// Create a string object with the user's letter
+			        		String letter = sc.next();
+			        		// Check that the user entered just a character
+							if(letter.length()<2) {
+								// Create an array with the character
+								char letter2[]= letter.toCharArray();
+								// Create an array with the sentence's words
+								String[] words =sentence.split(" ");
+								// Count how many words of the sentence start with the letter of the user
+								int counter=0;
+								for (String word: words) {
+								    char letters[]= word.toCharArray();
+								    if (letter2[0]==letters[0]) {
+								        counter++;
+								    }
 								}
-								else {
-									System.out.println("Please, enter just a letter.");
-								}
-			        		
+								System.out.println(counter + " words of the sentence given start with the letter " + letter + ".");
+								// Get out of the loop
+								flag6++;
+							}
+							else {
+								System.out.println("Please, enter just a letter.");
+							}
 			        	}
 			            break;
 			        case 6:
-			        	int cntr7=0;
-			        	System.out.println("Please, enter a letter and a sentence.");
-	        			String lnjmp2 = sc.nextLine();
-	        			String sntnc2 = sc.nextLine();
-			        	while (cntr7==0) {
-			        			String lttr = sc.next();
-								int lngth = lttr.length();
-								if(lngth<2) {
-									char lttr2[]= lttr.toCharArray();
-									String[] words =sntnc2.split(" ");
-									int cntr8=0;
-									for (String word: words) {
-									    char chr[]= word.toCharArray();
-									    System.out.println(chr[chr.length-1]);
-									    if (lttr2[0]==chr[chr.length-1]) {
-									        cntr8++;
-									    }
-									}
-									System.out.println(cntr8 + " word(s) of the sentence given end with the letter " + lttr + ".");
-									cntr7++;	
+			        	System.out.println("Please, enter a sentence and a letter.");
+			        	// Jump the token '/n' and go to the next line
+	        			String linejump2 = sc.nextLine();
+			        	// Create a string object with the user's sentence
+	        			String sentence2 = sc.nextLine();
+	        			// Open a loop
+			        	int flag7=0;
+			        	while (flag7==0) {
+			        		// Create a string object with the user's letter
+			        		String letter = sc.next();
+			        		// Check that the user entered just a character
+							if(letter.length()<2) {
+								// Create an array with the character
+								char letter2[]= letter.toCharArray();
+								// Create an array with the sentence's words
+								String[] words =sentence2.split(" ");
+								// Count how many words of the sentence end with the letter of the user
+								int counter=0;
+								for (String word: words) {
+								    char letters[]= word.toCharArray();
+								    if (letter2[0]==letters[letters.length-1]) {
+								        counter++;
+								    }
 								}
-								else {
-									System.out.println("Please, enter just a letter.");
-								}
-			        		
+								System.out.println(counter + " word(s) of the sentence given end with the letter " + letter + ".");
+								// Get out of the loop
+								flag7++;	
+							}
+							else {
+								System.out.println("Please, enter just a letter.");
+							}
 			        	}
 			            break;
 			        case 7:
 			        	System.out.println("Please, enter a word.");
+			        	// Create a string object with the user's token
 			        	String word = sc.next();
-			        	char[] chr = word.toCharArray();
+			        	// Create an array with the word's characters
+			        	char[] characters = word.toCharArray();
+			        	// Define a variable with the value of the word's last index number
 			        	int index2 = word.length()-1;
 			        	int index=0;
+			        	// Control if the word's inverted characters are equal
 			        	boolean encountered= false;
 			        	while (!encountered && index2>=0) {
-			        		if (chr[index]!=chr[index2]) {
+			        		if (characters[index]!=characters[index2]) {
 			        			encountered=true;
 			        		}
 			        		index++;
@@ -239,27 +292,34 @@ public class ScannerStringarrayInteger {
 	        			}
 			            break;
 			        default:
-			        	System.out.println("You didn't select a possible value");
+			        	System.out.println("You didn't select a possible option");
 			            break;
 			   	}
 			}
 			else {
 				System.out.println("You didn't select a possible option");
+				// Jump the token '/n'
+		    	String tokenjump = sc.next();
 			}
-		    int cntr4 = 0;
+			// Ask if the user wants to see the menu again or not
 		    System.out.println("Would you like to see the menu again?(y/n)");
-		    while (cntr4 == 0) {
-		    	String lnjmp2 = sc.nextLine();
-			   	String bck = sc.next();
-			   	switch ( bck ) {
+		    // Open a loop
+		    int flag2 = 0;
+		    while (flag2 == 0) {
+		    	// Create a string object with the user's token
+			   	String back = sc.next();
+			   	switch ( back ) {
 			   	case "y":
-			   		cntr4++;
+			   		// Get out of the loop and print the menu again
+			   		flag2++;
 			   		break;
 			   	case "n":
-			   		cntr4++;
+			   		// Get out of the loop and terminate the program
+			   		flag2++;
 			   		flag++;
 			   		break;
 			   	default:
+			   		// Ask for a possible value again
 			   		System.out.println("Please, select a possible value(y/n)");
 			   		break;
 			   	}
