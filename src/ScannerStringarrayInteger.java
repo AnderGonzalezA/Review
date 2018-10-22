@@ -4,30 +4,38 @@ public class ScannerStringarrayInteger {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	    Scanner sc = new Scanner(System.in);
-	    int cntr = 0;
-	    while (cntr == 0) {
-			System.out.print("Please, select an option:\n1\n2\n3\n4\n5\n6\n7\n");
+	    int flag = 0;
+	    while (flag == 0) {
+			System.out.print("Please, select an option:\n"
+					+ "1 Given a positive number tells how many even digits has the number.\n"
+					+ "2 Given a positive number and a digit tells whether the digit appears in the number or not and in case yes, how many times it does.\n"
+					+ "3 Given a positive number it gives us the inverted number.\n"
+					+ "4 Given a binary number it gives us its decimal value.\n"
+					+ "5 Given a sentence and a letter it gives the number of words of the sentence that begin with that letter.\n"
+					+ "6 Given a sentence and a letter it gives the number of words of the sentence that end with that letter.\n"
+					+ "7 Given a word it tells the user whether the word is a palindrome or it is not.\n");
 			if (sc.hasNextInt()) {
 				int ptn = sc.nextInt();
 			    switch ( ptn ) {
 			        case 1:
-			        	int cntr3=0;
+			        	int flag3=0;
 			        	System.out.println("Please, enter a positive number");
-			        	while (cntr3==0) {
+			        	while (flag3==0) {
 			        		if (sc.hasNextInt()) {
 			        			String pstv = sc.next();
 					        	int chk = Integer.parseInt(pstv);
 					        	if (chk>0) {
 						        	int lngth = pstv.length();
 						        	char[] dgt = pstv.toCharArray();
-						        	int cntr2 = 0;
+						        	int cntr = 0;
 						        	for(int i=0;i<lngth;i++) {
-						        		if (dgt[i] % 2 == 0) {
-											cntr2++;
+						        		int dgt2 = Character.getNumericValue(dgt[i]);
+						        		if (dgt2 % 2 == 0) {
+											cntr++;
 										}
 						        	}
-						        	System.out.println("This number has " + cntr2 + " even digits.");
-						        	cntr3++;
+					        		System.out.println("This number has " + cntr + " even digits.");
+						        	flag3++;
 					        	}
 					        	else {
 					        		System.out.println("That is not a positive number, try it again");
@@ -48,6 +56,7 @@ public class ScannerStringarrayInteger {
 					        	if (chk>0) {
 					        		System.out.println("Please, enter a digit");
 						        	if (sc.hasNextInt()) {
+										String saltodelinea= sc.nextLine();
 						        		String dgt2 = sc.next();
 						        		int chk2 = Integer.parseInt(dgt2);
 							        	if (chk2>0) {
@@ -122,7 +131,6 @@ public class ScannerStringarrayInteger {
 			        		if (sc.hasNextInt()) {
 			        			String bnry = sc.next();
 			        			char[] dgt = bnry.toCharArray();
-			        			int cntr6=0;
 			        			// Check that all the digits are 1 or 0
 			        			int ind = 0;
 			        			boolean encountered = false;
@@ -249,7 +257,7 @@ public class ScannerStringarrayInteger {
 			   		break;
 			   	case "n":
 			   		cntr4++;
-			   		cntr++;
+			   		flag++;
 			   		break;
 			   	default:
 			   		System.out.println("Please, select a possible value(y/n)");
