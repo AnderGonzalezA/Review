@@ -66,20 +66,18 @@ public class ScannerStringarrayInteger {
 			        			// Create a string object with the number's value
 			        			String usernumber = sc.next();
 			        			// Pass the value to an int variable
-					        	int chk = Integer.parseInt(usernumber);
+					        	int chek = Integer.parseInt(usernumber);
 					        	// Check that the number is positive
-					        	if (chk>0) {
+					        	if (chek>0) {
 					        		System.out.println("Please, enter a digit");
 					        		// Check that the user enters a number
 						        	if (sc.hasNextInt()) {
-						        		// Jump the line
-										String linejump= sc.nextLine();
 										// Create a string object with the number's value
 						        		String digit = sc.next();
 						        		// Pass the value to an int variable
-						        		int check = Integer.parseInt(digit);
+						        		int check2 = Integer.parseInt(digit);
 						        		// Check that the number is positive
-							        	if (check>0) {
+							        	if (check2>0) {
 							        		// Check that the number is a digit
 								        	if (digit.length()==1) {
 								        		// Create an array with the previous number's digits
@@ -88,7 +86,7 @@ public class ScannerStringarrayInteger {
 									        	int counter = 0;
 									        	for (int i=0;i<usernumber.length();i++) {
 									        		int digit2 = Character.getNumericValue(digits[i]);
-									        		if (digit2==check) {
+									        		if (digit2==check2) {
 									        			counter++;
 									        		}
 									        	}
