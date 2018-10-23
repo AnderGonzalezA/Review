@@ -95,15 +95,15 @@ public class ScannerStringarrayInteger {
 								        		flag3++;
 								        	}
 								        	else {
-								        		System.out.println("That is not a digit, enter the number again");
+								        		System.out.println("That is not a digit, enter the previous number again");
 								        	}
 							        	}
 							        	else {
-							        		System.out.println("That is not a digit, enter the number again");
+							        		System.out.println("That is not a digit, enter the previous number again");
 							        	}
 						        	}
 						        	else {
-						        		System.out.println("That is not a digit, enter the number again");
+						        		System.out.println("That is not a digit, enter the previous number again");
 						        		// Jump the token '/n'
 										String tokenjump= sc.next();
 						        	}
