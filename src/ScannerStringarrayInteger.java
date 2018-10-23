@@ -4,8 +4,8 @@ public class ScannerStringarrayInteger {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	    Scanner sc = new Scanner(System.in);
-	    int flag = 0;
-	    while (flag == 0) {
+	    boolean finished = false;
+	    while (finished == false) {
 			System.out.print("Please, select an option:\n"
 					+ "1 Given a positive number tells how many even digits has the number.\n"
 					+ "2 Given a positive number and a digit tells whether the digit appears in the number or not and in case yes, how many times it does.\n"
@@ -21,8 +21,8 @@ public class ScannerStringarrayInteger {
 			        case 1:
 			        	System.out.println("Please, enter a positive number");
 	        			// Open a loop
-			        	int flag2=0;
-			        	while (flag2==0) {
+			        	boolean finished1 = false;
+			        	while (finished1 == false) {
 			        		// Check that the user enters a number
 			        		if (sc.hasNextInt()) {
 			        			// Create a string object with the number's value
@@ -43,7 +43,7 @@ public class ScannerStringarrayInteger {
 						        	}
 					        		System.out.println("This number has " + counter + " even digits.");
 					        		// Get out of the loop
-						        	flag2++;
+						        	finished1 = true;
 					        	}
 					        	else {
 					        		System.out.println("That is not a positive number, try it again");
@@ -59,8 +59,8 @@ public class ScannerStringarrayInteger {
 			        case 2:
 			        	System.out.println("Please, enter a positive number");
 	        			// Open a loop
-			        	int flag3=0;
-			        	while (flag3==0) {
+			        	boolean finished2=false;
+			        	while (finished2==false) {
 			        		// Check that the user enters a number
 			        		if (sc.hasNextInt()) {
 			        			// Create a string object with the number's value
@@ -80,19 +80,24 @@ public class ScannerStringarrayInteger {
 							        	if (check2>0) {
 							        		// Check that the number is a digit
 								        	if (digit.length()==1) {
+								        		// Create an array with the digit's value
+								        		char charDigit = digit.charAt(0);
 								        		// Create an array with the previous number's digits
-									        	char[] digits = usernumber.toCharArray();
+									        	char[] numberDigits = usernumber.toCharArray();
 									        	// Count how many times the digit appears in the number
 									        	int counter = 0;
-									        	for (int i=0;i<usernumber.length();i++) {
-									        		int digit2 = Character.getNumericValue(digits[i]);
-									        		if (digit2==check2) {
+									        	for (int i=0;i<numberDigits.length;i++) {
+									        		//int digit2 = Character.getNumericValue(digits[i]);
+									        		//if (digit2==check2) {
+								        				//counter++;
+								        			//}
+									        		if (charDigit==numberDigits[i]){
 									        			counter++;
 									        		}
 									        	}
 									        	System.out.println("This digit appears "+ counter + " times in that number.");
 									        	// Get out of the loop
-								        		flag3++;
+								        		finished2=true;
 								        	}
 								        	else {
 								        		System.out.println("That is not a digit, enter the previous number again");
@@ -122,8 +127,8 @@ public class ScannerStringarrayInteger {
 			        case 3:
 			        	System.out.println("Please, enter a positive number");
 	        			// Open a loop
-			        	int flag4=0;
-			        	while (flag4==0) {
+			        	boolean finished3=false;
+			        	while (finished3==false) {
 			        		// Check that the user enters a number
 			        		if (sc.hasNextInt()) {
 			        			// Create a string object with the number's value
@@ -138,7 +143,7 @@ public class ScannerStringarrayInteger {
 					        		}
 					        		System.out.print("\n");
 					        		// Get out of the loop
-					        		flag4++;
+					        		finished3 = true;
 					        	}
 					        	else {
 					        		System.out.println("That is not a positive number, try it again");
@@ -155,8 +160,8 @@ public class ScannerStringarrayInteger {
 			        case 4:
 			        	System.out.println("Please, enter a binary number");
 	        			// Open a loop
-			        	int flag5=0;
-			        	while (flag5==0) {
+			        	boolean finished4 = false;
+			        	while (finished4==false) {
 			        		// Check that the user enters a number
 			        		if (sc.hasNextInt()) {
 			        			// Create a string object with the number's value
@@ -183,7 +188,7 @@ public class ScannerStringarrayInteger {
 					        		}
 			        				System.out.println("The binary number given's decimal value is: " + decimal);
 			        				// Get out of the loop
-			        				flag5++;
+			        				finished4 = true;
 			        			}
 			        			else {
 			        				System.out.println("That is not a binary number, try it again");
@@ -203,8 +208,8 @@ public class ScannerStringarrayInteger {
 			        	// Create a string object with the user's sentence
 	        			String sentence = sc.nextLine();
 	        			// Open a loop
-			        	int flag6=0;
-			        	while (flag6==0) {
+			        	boolean finished5=false;
+			        	while (finished5==false) {
 			        		// Create a string object with the user's letter
 			        		String letter = sc.next();
 			        		// Check that the user entered just a character
@@ -223,7 +228,7 @@ public class ScannerStringarrayInteger {
 								}
 								System.out.println(counter + " words of the sentence given start with the letter " + letter + ".");
 								// Get out of the loop
-								flag6++;
+								finished5 = true;
 							}
 							else {
 								System.out.println("Please, enter just a letter.");
@@ -237,8 +242,8 @@ public class ScannerStringarrayInteger {
 			        	// Create a string object with the user's sentence
 	        			String sentence2 = sc.nextLine();
 	        			// Open a loop
-			        	int flag7=0;
-			        	while (flag7==0) {
+			        	boolean finished6=false;
+			        	while (finished6==false) {
 			        		// Create a string object with the user's letter
 			        		String letter = sc.next();
 			        		// Check that the user entered just a character
@@ -257,7 +262,7 @@ public class ScannerStringarrayInteger {
 								}
 								System.out.println(counter + " word(s) of the sentence given end with the letter " + letter + ".");
 								// Get out of the loop
-								flag7++;	
+								finished6 = true;	
 							}
 							else {
 								System.out.println("Please, enter just a letter.");
@@ -302,19 +307,19 @@ public class ScannerStringarrayInteger {
 			// Ask if the user wants to see the menu again or not
 		    System.out.println("Would you like to see the menu again?(y/n)");
 		    // Open a loop
-		    int flag2 = 0;
-		    while (flag2 == 0) {
+		    boolean goback = false;
+		    while (goback == false) {
 		    	// Create a string object with the user's token
 			   	String back = sc.next();
 			   	switch ( back ) {
 			   	case "y":
 			   		// Get out of the loop and print the menu again
-			   		flag2++;
+			   		goback = true;
 			   		break;
 			   	case "n":
 			   		// Get out of the loop and terminate the program
-			   		flag2++;
-			   		flag++;
+			   		goback = true;
+			   		finished = true;
 			   		break;
 			   	default:
 			   		// Ask for a possible value again
