@@ -202,7 +202,7 @@ public class ScannerStringarrayInteger {
 			        	}
 			            break;
 			        case 5:
-			        	System.out.println("Please, enter a sentence and a letter.");
+			        	System.out.println("Please, enter a sentence.");
 			        	// Jump the token '/n' and go to the next line
 			        	String linejump = sc.nextLine();
 			        	// Create a string object with the user's sentence
@@ -210,6 +210,7 @@ public class ScannerStringarrayInteger {
 	        			// Open a loop
 			        	boolean finished5=false;
 			        	while (finished5==false) {
+			        		System.out.println("Please, enter a letter.");
 			        		// Create a string object with the user's letter
 			        		String letter = sc.next();
 			        		// Check that the user entered just a character
@@ -236,7 +237,7 @@ public class ScannerStringarrayInteger {
 			        	}
 			            break;
 			        case 6:
-			        	System.out.println("Please, enter a sentence and a letter.");
+			        	System.out.println("Please, enter a sentence.");
 			        	// Jump the token '/n' and go to the next line
 	        			String linejump2 = sc.nextLine();
 			        	// Create a string object with the user's sentence
@@ -244,6 +245,7 @@ public class ScannerStringarrayInteger {
 	        			// Open a loop
 			        	boolean finished6=false;
 			        	while (finished6==false) {
+			        		System.out.println("Please, enter a letter.");
 			        		// Create a string object with the user's letter
 			        		String letter = sc.next();
 			        		// Check that the user entered just a character
