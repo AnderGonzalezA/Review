@@ -52,7 +52,7 @@ public class ScannerStringarrayInteger {
 			        		else {
 			        			System.out.println("That is not a positive number, try it again");
 			        			// Jump the token '/n'
-								String tokenjump= sc.next();
+								sc.next();
 			        		}
 			        	}
 			            break;
@@ -110,7 +110,7 @@ public class ScannerStringarrayInteger {
 						        	else {
 						        		System.out.println("That is not a digit, enter the previous number again");
 						        		// Jump the token '/n'
-										String tokenjump= sc.next();
+										sc.next();
 						        	}
 					        	}
 					        	else {
@@ -120,7 +120,7 @@ public class ScannerStringarrayInteger {
 			        		else {
 			        			System.out.println("That is not a positive number, try it again");
 			        			// Jump the token '/n'
-								String tokenjump= sc.next();
+								sc.next();
 			        		}
 			        	}
 			            break;
@@ -152,7 +152,7 @@ public class ScannerStringarrayInteger {
 			        		else {
 			        			System.out.println("That is not a positive number, try it again");
 			        			// Jump the token '/n'
-								String tokenjump= sc.next();
+								sc.next();
 			        			
 			        		}
 			        	}
@@ -197,14 +197,14 @@ public class ScannerStringarrayInteger {
 			        		else {
 			        			System.out.println("That is not a binary number, try it again");
 			        			// Jump the token '/n'
-								String tokenjump= sc.next();
+								sc.next();
 			        		}
 			        	}
 			            break;
 			        case 5:
 			        	System.out.println("Please, enter a sentence.");
 			        	// Jump the token '/n' and go to the next line
-			        	String linejump = sc.nextLine();
+			        	sc.nextLine();
 			        	// Create a string object with the user's sentence
 	        			String sentence = sc.nextLine();
 	        			// Open a loop
@@ -239,7 +239,7 @@ public class ScannerStringarrayInteger {
 			        case 6:
 			        	System.out.println("Please, enter a sentence.");
 			        	// Jump the token '/n' and go to the next line
-	        			String linejump2 = sc.nextLine();
+	        			sc.nextLine();
 			        	// Create a string object with the user's sentence
 	        			String sentence2 = sc.nextLine();
 	        			// Open a loop
@@ -304,7 +304,7 @@ public class ScannerStringarrayInteger {
 			else {
 				System.out.println("You didn't select a possible option");
 				// Jump the token '/n'
-		    	String tokenjump = sc.next();
+		    	sc.next();
 			}
 			// Ask if the user wants to see the menu again or not
 		    System.out.println("Would you like to see the menu again?(y/n)");
