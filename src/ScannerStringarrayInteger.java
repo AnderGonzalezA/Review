@@ -17,6 +17,8 @@ public class ScannerStringarrayInteger {
 			// Check that the user enters a number
 			if (sc.hasNextInt()) {
 				int option = sc.nextInt();
+				// Jump the token '/n'
+				sc.nextLine();
 			    switch ( option ) {
 			        case 1:
 			        	System.out.println("Please, enter a positive number");
@@ -27,6 +29,8 @@ public class ScannerStringarrayInteger {
 			        		if (sc.hasNextInt()) {
 			        			// Create a string object with the number's value
 			        			String usernumber = sc.next();
+								// Jump the token '/n'
+								sc.nextLine();
 			        			// Pass the value to an int variable
 					        	int check = Integer.parseInt(usernumber);
 					        	// Check that the number is positive
@@ -52,7 +56,7 @@ public class ScannerStringarrayInteger {
 			        		else {
 			        			System.out.println("That is not a positive number, try it again");
 			        			// Jump the token '/n'
-								sc.next();
+								sc.nextLine();
 			        		}
 			        	}
 			            break;
@@ -65,6 +69,8 @@ public class ScannerStringarrayInteger {
 			        		if (sc.hasNextInt()) {
 			        			// Create a string object with the number's value
 			        			String usernumber = sc.next();
+								// Jump the token '/n'
+								sc.nextLine();
 			        			// Pass the value to an int variable
 					        	int chek = Integer.parseInt(usernumber);
 					        	// Check that the number is positive
@@ -74,6 +80,8 @@ public class ScannerStringarrayInteger {
 						        	if (sc.hasNextInt()) {
 										// Create a string object with the number's value
 						        		String digit = sc.next();
+										// Jump the token '/n'
+										sc.nextLine();
 						        		// Pass the value to an int variable
 						        		int check2 = Integer.parseInt(digit);
 						        		// Check that the number is positive
@@ -110,7 +118,7 @@ public class ScannerStringarrayInteger {
 						        	else {
 						        		System.out.println("That is not a digit, enter the previous number again");
 						        		// Jump the token '/n'
-										sc.next();
+						        		sc.nextLine();
 						        	}
 					        	}
 					        	else {
@@ -120,7 +128,7 @@ public class ScannerStringarrayInteger {
 			        		else {
 			        			System.out.println("That is not a positive number, try it again");
 			        			// Jump the token '/n'
-								sc.next();
+			        			sc.nextLine();
 			        		}
 			        	}
 			            break;
@@ -133,6 +141,8 @@ public class ScannerStringarrayInteger {
 			        		if (sc.hasNextInt()) {
 			        			// Create a string object with the number's value
 			        			String usernumber = sc.next();
+								// Jump the token '/n'
+								sc.nextLine();
 			        			// Pass the value to an int variable
 					        	int chk = Integer.parseInt(usernumber);
 					        	// Check that the number is positive
@@ -152,7 +162,7 @@ public class ScannerStringarrayInteger {
 			        		else {
 			        			System.out.println("That is not a positive number, try it again");
 			        			// Jump the token '/n'
-								sc.next();
+			        			sc.nextLine();
 			        			
 			        		}
 			        	}
@@ -166,6 +176,8 @@ public class ScannerStringarrayInteger {
 			        		if (sc.hasNextInt()) {
 			        			// Create a string object with the number's value
 			        			String usernumber = sc.next();
+								// Jump the token '/n'
+								sc.nextLine();
 			        			// Create an array with the number's digits
 			        			char[] digits = usernumber.toCharArray();
 			        			// Check that all the digits are 1 or 0
@@ -197,7 +209,7 @@ public class ScannerStringarrayInteger {
 			        		else {
 			        			System.out.println("That is not a binary number, try it again");
 			        			// Jump the token '/n'
-								sc.next();
+			        			sc.nextLine();
 			        		}
 			        	}
 			            break;
@@ -213,6 +225,8 @@ public class ScannerStringarrayInteger {
 			        		System.out.println("Please, enter a letter.");
 			        		// Create a string object with the user's letter
 			        		String letter = sc.next();
+							// Jump the token '/n'
+							sc.nextLine();
 			        		// Check that the user entered just a character
 							if(letter.length()<2) {
 								// Create an array with the character
@@ -248,6 +262,8 @@ public class ScannerStringarrayInteger {
 			        		System.out.println("Please, enter a letter.");
 			        		// Create a string object with the user's letter
 			        		String letter = sc.next();
+							// Jump the token '/n'
+							sc.nextLine();
 			        		// Check that the user entered just a character
 							if(letter.length()<2) {
 								// Create an array with the character
@@ -275,6 +291,8 @@ public class ScannerStringarrayInteger {
 			        	System.out.println("Please, enter a word.");
 			        	// Create a string object with the user's token
 			        	String word = sc.next();
+						// Jump the token '/n'
+						sc.nextLine();
 			        	// Create an array with the word's characters
 			        	char[] characters = word.toCharArray();
 			        	// Define a variable with the value of the word's last index number
@@ -304,7 +322,7 @@ public class ScannerStringarrayInteger {
 			else {
 				System.out.println("You didn't select a possible option");
 				// Jump the token '/n'
-		    	sc.next();
+				sc.nextLine();
 			}
 			// Ask if the user wants to see the menu again or not
 		    System.out.println("Would you like to see the menu again?(y/n)");
@@ -313,6 +331,8 @@ public class ScannerStringarrayInteger {
 		    while (goback == false) {
 		    	// Create a string object with the user's token
 			   	String back = sc.next();
+				// Jump the token '/n'
+				sc.nextLine();
 			   	switch ( back ) {
 			   	case "y":
 			   		// Get out of the loop and print the menu again
