@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 public class ScannerStringarrayInteger {
 
 	public static void main(String[] args) {
@@ -31,16 +31,12 @@ public class ScannerStringarrayInteger {
 			        			String usernumber = sc.next();
 								// Jump the token '/n'
 								sc.nextLine();
-			        			// Pass the value to an int variable
-					        	int check = Integer.parseInt(usernumber);
 					        	// Check that the number is positive
-					        	if (check>0) {
-					        		// Create an array with the number's digits
-						        	char[] digits = usernumber.toCharArray();
+					        	if (Integer.parseInt(usernumber)>0) {
 						        	// Count the even digits of the number
 						        	int counter = 0;
 						        	for(int i=0;i<usernumber.length();i++) {
-						        		int digit = Character.getNumericValue(digits[i]);
+						        		int digit = Character.getNumericValue(usernumber.charAt(i));
 						        		if (digit % 2 == 0) {
 											counter++;
 										}
@@ -71,10 +67,8 @@ public class ScannerStringarrayInteger {
 			        			String usernumber = sc.next();
 								// Jump the token '/n'
 								sc.nextLine();
-			        			// Pass the value to an int variable
-					        	int chek = Integer.parseInt(usernumber);
 					        	// Check that the number is positive
-					        	if (chek>0) {
+					        	if (Integer.parseInt(usernumber)>0) {
 					        		System.out.println("Please, enter a digit");
 					        		// Check that the user enters a number
 						        	if (sc.hasNextInt()) {
@@ -82,24 +76,14 @@ public class ScannerStringarrayInteger {
 						        		String digit = sc.next();
 										// Jump the token '/n'
 										sc.nextLine();
-						        		// Pass the value to an int variable
-						        		int check2 = Integer.parseInt(digit);
 						        		// Check that the number is positive
-							        	if (check2>0) {
+							        	if (Integer.parseInt(digit)>0) {
 							        		// Check that the number is a digit
 								        	if (digit.length()==1) {
-								        		// Create an array with the digit's value
-								        		char charDigit = digit.charAt(0);
-								        		// Create an array with the previous number's digits
-									        	char[] numberDigits = usernumber.toCharArray();
 									        	// Count how many times the digit appears in the number
 									        	int counter = 0;
-									        	for (int i=0;i<numberDigits.length;i++) {
-									        		//int digit2 = Character.getNumericValue(digits[i]);
-									        		//if (digit2==check2) {
-								        				//counter++;
-								        			//}
-									        		if (charDigit==numberDigits[i]){
+									        	for (int i=0;i<usernumber.length();i++) {
+									        		if (digit.charAt(0)==usernumber.charAt(i)){
 									        			counter++;
 									        		}
 									        	}
@@ -143,10 +127,8 @@ public class ScannerStringarrayInteger {
 			        			String usernumber = sc.next();
 								// Jump the token '/n'
 								sc.nextLine();
-			        			// Pass the value to an int variable
-					        	int chk = Integer.parseInt(usernumber);
 					        	// Check that the number is positive
-					        	if (chk>0) {
+					        	if (Integer.parseInt(usernumber)>0) {
 					        		// Print the inverted number
 					        		for (int index=usernumber.length()-1;index>=0;index--) {
 					        			System.out.print(usernumber.charAt(index));
@@ -178,13 +160,11 @@ public class ScannerStringarrayInteger {
 			        			String usernumber = sc.next();
 								// Jump the token '/n'
 								sc.nextLine();
-			        			// Create an array with the number's digits
-			        			char[] digits = usernumber.toCharArray();
 			        			// Check that all the digits are 1 or 0
 			        			int index = 0;
 			        			boolean encountered = false;
-			        			while ((index < digits.length) && (!encountered)) {
-			        				if (digits[index]!='0' && digits[index]!='1') {
+			        			while ((index < usernumber.length()) && (!encountered)) {
+			        				if (usernumber.charAt(index)!='0' && usernumber.charAt(index)!='1') {
 			        					encountered = true;
 			        				}
 			        			index++;
@@ -194,8 +174,7 @@ public class ScannerStringarrayInteger {
 			        				double decimal=0;
 			        				int index2=0;
 			        				for (int index3=usernumber.length()-1;index3>=0;index3--) {
-			        					int digit = Character.getNumericValue(usernumber.charAt(index3));
-			        					decimal=decimal+ digit*Math.pow(2,index2);
+			        					decimal=decimal+ Character.getNumericValue(usernumber.charAt(index3))*Math.pow(2,index2);
 					        			index2++;
 					        		}
 			        				System.out.println("The binary number given's decimal value is: " + decimal);
@@ -215,8 +194,6 @@ public class ScannerStringarrayInteger {
 			            break;
 			        case 5:
 			        	System.out.println("Please, enter a sentence.");
-			        	// Jump the token '/n' and go to the next line
-			        	sc.nextLine();
 			        	// Create a string object with the user's sentence
 	        			String sentence = sc.nextLine();
 	        			// Open a loop
@@ -229,15 +206,12 @@ public class ScannerStringarrayInteger {
 							sc.nextLine();
 			        		// Check that the user entered just a character
 							if(letter.length()<2) {
-								// Create an array with the character
-								char letter2[]= letter.toCharArray();
 								// Create an array with the sentence's words
 								String[] words =sentence.split(" ");
 								// Count how many words of the sentence start with the letter of the user
 								int counter=0;
 								for (String word: words) {
-								    char letters[]= word.toCharArray();
-								    if (letter2[0]==letters[0]) {
+								    if (letter.charAt(0)==word.charAt(0)) {
 								        counter++;
 								    }
 								}
@@ -252,8 +226,6 @@ public class ScannerStringarrayInteger {
 			            break;
 			        case 6:
 			        	System.out.println("Please, enter a sentence.");
-			        	// Jump the token '/n' and go to the next line
-	        			sc.nextLine();
 			        	// Create a string object with the user's sentence
 	        			String sentence2 = sc.nextLine();
 	        			// Open a loop
@@ -266,15 +238,12 @@ public class ScannerStringarrayInteger {
 							sc.nextLine();
 			        		// Check that the user entered just a character
 							if(letter.length()<2) {
-								// Create an array with the character
-								char letter2[]= letter.toCharArray();
 								// Create an array with the sentence's words
 								String[] words =sentence2.split(" ");
 								// Count how many words of the sentence end with the letter of the user
 								int counter=0;
 								for (String word: words) {
-								    char letters[]= word.toCharArray();
-								    if (letter2[0]==letters[letters.length-1]) {
+								    if (letter.charAt(0)==word.charAt(word.length()-1)) {
 								        counter++;
 								    }
 								}
@@ -293,15 +262,13 @@ public class ScannerStringarrayInteger {
 			        	String word = sc.next();
 						// Jump the token '/n'
 						sc.nextLine();
-			        	// Create an array with the word's characters
-			        	char[] characters = word.toCharArray();
 			        	// Define a variable with the value of the word's last index number
 			        	int index2 = word.length()-1;
 			        	int index=0;
 			        	// Control if the word's inverted characters are equal
 			        	boolean encountered= false;
 			        	while (!encountered && index2>=0) {
-			        		if (characters[index]!=characters[index2]) {
+			        		if (word.charAt(index)!=word.charAt(index2)) {
 			        			encountered=true;
 			        		}
 			        		index++;
